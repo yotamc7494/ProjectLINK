@@ -12,11 +12,11 @@ with open("base_prompt", "r", encoding="utf-8") as f:
     prompt_template = f.read()
 
 
-#@app.route('/query', methods=['POST'])
-def query(user_input):
+@app.route('/query', methods=['POST'])
+def query():
     global current_conversation
-    #data = request.get_json()
-    #user_input = data.get("text", "")
+    data = request.get_json()
+    user_input = data.get("text", "")
     current_conversation += f"[USER]: {user_input}\n"
     prompt = prompt_template.replace("[conversation log]", current_conversation)
 
@@ -32,7 +32,7 @@ def query(user_input):
         content = f"[say]: I'm sorry, something went wrong: {e}"
     action_manager(content)
     current_conversation += f"[LINK]: {content}\n"
-    #return jsonify({"reply": content})
+    return jsonify({"reply": content})
 
 
 def action_manager(ai_response):
@@ -66,5 +66,5 @@ def action_manager(ai_response):
 
 
 if __name__ == '__main__':
-    query("its quite here, put us in a romantic vibe")
-    #app.run(host="0.0.0.0", port=5000)
+    #query("its quite here, put us in a romantic vibe")
+    app.run(host="0.0.0.0", port=5000)

@@ -35,7 +35,7 @@ Action List:
 - [search] – Provide a search query prompt.
 - [light] – Turn on a smart light. Provide light name (bedroom, kitchen, living room).
 - [play song] – Play a specific song by name.
-- [play playlist] – Play a specific playlist by name or a vibe, you can search a general playlist.
+- [play playlist] – Play a specific playlist by name or a vibe, you can search a general playlist or choose from playlists file
 - [next song] – Skip to the next song. (No value needed)
 - [prev song] – Return to the previous song. (No value needed)
 - [play song] – Resume playing the current song. (No value needed)
@@ -52,7 +52,7 @@ Apps List:
 ---
 
 Files:
-music - playlists
+music - playlists, use them for music
 locations - addresses and saved locations
 
 ---
